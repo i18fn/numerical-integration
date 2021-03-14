@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"time"
+
+	"github.com/aclements/go-moremath/stats"
 )
 
 func trapezoid(a, b, h float64) float64 {
@@ -49,17 +51,17 @@ func test2() {
 	fmt.Println(integrate2(f, 0, 5)) // 理論値 : 625
 }
 
-// 自由度1のときのt分布の両側α点を求める
+// t分布の両側α点を求める
 func test3() {
-	// v := stats.TDist{1.0} // 自由度1.0
+	v := stats.TDist{1.0} // 自由度1.0
+	fmt.Println(v)
 }
 
 func main() {
 	start := time.Now()
 
 	// ここに書く
-	test1()
-	test2()
+	test3()
 
 	end := time.Now().Sub(start)
 	fmt.Printf("Time : ")
